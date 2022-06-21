@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://unpkg.com/vanilla-picker@2"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,21 @@
 </head>
 <body>
     <div class="title">Etch-A-Sketch</div>
-    <div class="grid">
-
+    <div class="container">
+        <div class="settings">
+            <div class="sketch_options">
+                <button class="color_picker">Color Select</button>
+                <button class="grey_scale">Grey Scale</button>
+                <button class="random">Random</button>
+                <button class="rainbow rainbow1">Make it Gay</button>
+            </div>
+            <div class="tools">
+                <button class="eraser">Eraser</button>
+                <button class="clear">Clear Sketch</button>
+                <button>Adjust Grid Size</button>
+            </div>
+        </div>
+        <div class="grid"></div>
     </div>
     
 </body>

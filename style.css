@@ -1,12 +1,93 @@
 * {
     box-sizing: border-box;
     background-color: #ede8e6;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
+    font-family:'Courier New', Courier, monospace;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title {
     font-size: 72px;
     font-weight: 600;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
+
+.container {
+    width: 800px;
+    padding: 32px 80px;
+    display: flex;
+    justify-content: center;
+
+     /* TEMPORARY BORDER*/
+     border-width: 4px;
+     border-color: lightgoldenrodyellow;
+     border-style: solid;
+}
+
+.settings {
+    flex: 1 1 0px;
+
+    /* TEMPORARY BORDER*/
+    border-width: 4px;
+    border-color: lightcyan;
+    border-style: solid;
+}
+
+.grid {
+    flex: 1 1 0px;
+
+    /* TEMPORARY BORDER*/
+    border-width: 4px;
+    border-color: lightpink;
+    border-style: solid;
+}
+
+.pixel {
+    min-height: 20px;
+    min-width: 20px;
+    padding: 10px;
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+}
+
+.rainbow1 {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, .5) 0%,
+        rgba(255, 154, 0, .5) 10%,
+        rgba(208, 222, 33, .5) 20%,
+        rgba(79, 220, 74, .5) 30%,
+        rgba(63, 218, 216, .5) 40%,
+        rgba(47, 201, 226, .5) 50%,
+        rgba(28, 127, 238, .5) 60%,
+        rgba(95, 21, 242, .5) 70%,
+        rgba(186, 12, 248, .5) 80%,
+        rgba(251, 7, 217, .5) 90%,
+        rgba(255, 0, 0, .5) 100%
+    );
+}
+
+.rainbow2 {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 3) 0%,
+        rgba(255, 154, 0, 3) 10%,
+        rgba(208, 222, 33, 3) 20%,
+        rgba(79, 220, 74, 3) 30%,
+        rgba(63, 218, 216, 3) 40%,
+        rgba(47, 201, 226, 3) 50%,
+        rgba(28, 127, 238, 3) 60%,
+        rgba(95, 21, 242, 3) 70%,
+        rgba(186, 12, 248, 3) 80%,
+        rgba(251, 7, 217, 3) 90%,
+        rgba(255, 0, 0, 3) 100%
+    );
+}
+
