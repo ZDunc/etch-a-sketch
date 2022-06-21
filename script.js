@@ -2,7 +2,7 @@
 
 const DEFAULT_COLOR = 'lightskyblue';
 const DEFAULT_MODE = 'color';
-const DEFAULT_SIZE = 16;
+const DEFAULT_SIZE = 32;
 
 let currentColor = DEFAULT_COLOR;
 let currentMode = DEFAULT_MODE;
@@ -163,9 +163,9 @@ grid.appendChild(createGrid(DEFAULT_SIZE));
 paintConfiguration(DEFAULT_MODE);
 
 
-// Configure buttons -------------
+// Configure buttons --------------------------------------------------------
 
-// color picker
+// color select
 const colorPicker = document.querySelector('.color_picker');
 let picker = new Picker({
     parent: colorPicker,
@@ -173,8 +173,12 @@ let picker = new Picker({
     onChange: function(color) {
                   colorPicker.style.backgroundColor = color.rgbaString;
                   currentColor = color.rgbaString;
-                  init();
               },
+});
+
+colorPicker.addEventListener('click', function() {
+    init();
+    paintConfiguration();
 });
 
 // grey-scale colors
