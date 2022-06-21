@@ -1,12 +1,8 @@
-// Global Variables & Initial Program Variables
+// Global Variables
 
-const DEFAULT_COLOR = 'lightskyblue';
+const DEFAULT_COLOR = 'gold';
 const DEFAULT_MODE = 'color';
-const DEFAULT_SIZE = 32;
-
-let currentColor = DEFAULT_COLOR;
-let currentMode = DEFAULT_MODE;
-let currentSize = DEFAULT_SIZE;
+const DEFAULT_SIZE = 30;
 
 // FUNCTIONS -----------------------------------------------------------------
 
@@ -34,6 +30,10 @@ function createGrid(size) {
         for (let j = 0; j < size; j++) {
             const pixel = document.createElement('div');
             pixel.classList.add("pixel");
+            const newHeightAndWidth = (576 / size);
+            pixel.style.height = `${newHeightAndWidth}px`;
+            pixel.style.width = `${newHeightAndWidth}px`;
+            
 
             // edge cases, stronger outline on outside of grid
             if (j == 0)
@@ -69,7 +69,7 @@ function paintConfiguration(mode) {
                 const randomR = Math.floor(Math.random() * 256);
                 const randomG = Math.floor(Math.random() * 256);
                 const randomB = Math.floor(Math.random() * 256);
-                e.target.style.backgroundColor = `rgba(${randomR}, ${randomG}, ${randomB}, 2)`;
+                e.target.style.backgroundColor = `rgba(${randomR}, ${randomG}, ${randomB}, 0.5)`;
                 break;
             case 'rainbow':
                 const randomColor2 = Math.floor((Math.random() * 11) + 1);
@@ -157,6 +157,11 @@ function clearSketch() {
 
 // RUN PROGRAM --------------------------------------------------------------
 
+//Initialize variables
+let currentColor = DEFAULT_COLOR;
+let currentMode = DEFAULT_MODE;
+let currentSize = DEFAULT_SIZE;
+
 // Execuate on onload
 const grid = document.querySelector('.grid');
 grid.appendChild(createGrid(DEFAULT_SIZE));
@@ -183,6 +188,7 @@ colorPicker.addEventListener('click', function() {
 
 // grey-scale colors
 const greyButton = document.querySelector('.grey_scale');
+greyButton.classList.add('grey');
 greyButton.addEventListener('click', function() {
     init();
     
@@ -192,6 +198,10 @@ greyButton.addEventListener('click', function() {
 
 // randomized colors
 const randomButton = document.querySelector('.random');
+const randomR = Math.floor(Math.random() * 256);
+const randomG = Math.floor(Math.random() * 256);
+const randomB = Math.floor(Math.random() * 256);
+randomButton.style.backgroundColor = `rgba(${randomR}, ${randomG}, ${randomB}, 0.5)`;
 randomButton.addEventListener('click', function() {
     init();
     
@@ -199,7 +209,7 @@ randomButton.addEventListener('click', function() {
     paintConfiguration(currentMode);
 });
 
-// randomized rainbow colors with special page background
+// randomized colors in the rainbow, special page background
 const rainbowButton = document.querySelector('.rainbow');
 rainbowButton.addEventListener('click', function() {
     const all = document.querySelector('*');
@@ -211,6 +221,7 @@ rainbowButton.addEventListener('click', function() {
 
 // eraser
 const eraserButton = document.querySelector('.eraser');
+eraserButton.classList.add('white');
 eraserButton.addEventListener('click', function() {
     currentMode = 'eraser';
     paintConfiguration(currentMode);
@@ -218,6 +229,7 @@ eraserButton.addEventListener('click', function() {
 
 // clear button
 const clearButton = document.querySelector('.clear');
+clearButton.classList.add('white');
 clearButton.addEventListener('click', function() {
     clearSketch();
 });

@@ -39,7 +39,7 @@ body {
 }
 
 .grid {
-    flex: 1 1 0px;
+    display: flex;
 
     /* TEMPORARY BORDER*/
     border-width: 4px;
@@ -48,9 +48,9 @@ body {
 }
 
 .pixel {
-    min-height: 20px;
-    min-width: 20px;
-    padding: 10px;
+    flex: 1;
+    height: 18px;
+    width: 18px;
     border-width: 0.5px;
     border-style: solid;
     border-color: black;
@@ -89,5 +89,13 @@ body {
         rgba(251, 7, 217, 3) 90%,
         rgba(255, 0, 0, 3) 100%
     );
+}
+
+.grey {
+    background-color: lightgrey;
+}
+
+.white {
+    background-color: white;
 }
 
