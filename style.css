@@ -41,10 +41,10 @@ body {
 .grid {
     display: flex;
 
-    /* TEMPORARY BORDER*/
+    /* TEMPORARY BORDER
     border-width: 4px;
     border-color: lightpink;
-    border-style: solid;
+    border-style: solid;*/
 }
 
 .pixel {
@@ -77,17 +77,17 @@ body {
 .rainbow2 {
     background: linear-gradient(
         90deg,
-        rgba(255, 0, 0, 3) 0%,
-        rgba(255, 154, 0, 3) 10%,
-        rgba(208, 222, 33, 3) 20%,
-        rgba(79, 220, 74, 3) 30%,
-        rgba(63, 218, 216, 3) 40%,
-        rgba(47, 201, 226, 3) 50%,
-        rgba(28, 127, 238, 3) 60%,
-        rgba(95, 21, 242, 3) 70%,
-        rgba(186, 12, 248, 3) 80%,
-        rgba(251, 7, 217, 3) 90%,
-        rgba(255, 0, 0, 3) 100%
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
     );
 }
 
@@ -95,8 +95,16 @@ body {
     background-color: lightgrey;
 }
 
-.white {
+.erase_color {
     background-color: lightpink;
+}
+
+.method_button_color {
+    background-color: #9fecf0ff;
+}
+
+.grid_button_color {
+    background-color: #f4d893ff;
 }
 
 

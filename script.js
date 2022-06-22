@@ -1,7 +1,8 @@
 // Global Variables
 
-const DEFAULT_COLOR = 'gold';
+const DEFAULT_COLOR = '#cb9be8ff';
 const DEFAULT_MODE = 'color';
+const DEFAULT_COLORING_METHOD = 'mouseenter'
 const DEFAULT_SIZE = 30;
 
 // FUNCTIONS -----------------------------------------------------------------
@@ -57,35 +58,49 @@ function paintConfiguration(mode) {
     const gridItems = document.querySelectorAll('.pixel');
 
     gridItems.forEach((item) => {
-        item.addEventListener('mouseenter', (e) => {
-        
-        switch (mode) {
-            case 'grey_scale':
-                const randomColor = Math.floor((Math.random() * 11) + 1);
-                newColor = greySelector(randomColor);
-                e.target.style.backgroundColor = newColor;
-                break;
-            case 'random':
-                const randomR = Math.floor(Math.random() * 256);
-                const randomG = Math.floor(Math.random() * 256);
-                const randomB = Math.floor(Math.random() * 256);
-                e.target.style.backgroundColor = `rgba(${randomR}, ${randomG}, ${randomB}, 0.5)`;
-                break;
-            case 'rainbow':
-                const randomColor2 = Math.floor((Math.random() * 11) + 1);
-                newColor = rainbowSelector(randomColor2);
-                e.target.style.backgroundColor = newColor;
-                break;
-            case 'eraser':
-                e.target.style.backgroundColor = 'white';
-                break;
-            default:
-                e.target.style.backgroundColor = currentColor;
-                e.target.style.opacity = 1;
-                break;
+        if (currentColoringMethod == "mouseenter") {
+            //e.removeEventListener();
+            item.onmouseenter = (e) => {
+                modeOperation(mode, e);
+            }
+        } else {
+            //e.removeEventListener();
+            item.onclick = (e) => {
+                modeOperation(mode, e);
+            }
+            item.onmouseenter = (e) => {
+                return;
+            }
         }
-        });
     });
+}
+
+function modeOperation(mode, e) {
+    switch (mode) {
+        case 'grey_scale':
+            const randomColor = Math.floor((Math.random() * 11) + 1);
+            newColor = greySelector(randomColor);
+            e.target.style.backgroundColor = newColor;
+            break;
+        case 'random':
+            const randomR = Math.floor(Math.random() * 256);
+            const randomG = Math.floor(Math.random() * 256);
+            const randomB = Math.floor(Math.random() * 256);
+            e.target.style.backgroundColor = `rgba(${randomR}, ${randomG}, ${randomB}, 0.5)`;
+            break;
+        case 'rainbow':
+            const randomColor2 = Math.floor((Math.random() * 11) + 1);
+            newColor = rainbowSelector(randomColor2);
+            e.target.style.backgroundColor = newColor;
+            break;
+        case 'eraser':
+            e.target.style.backgroundColor = 'white';
+            break;
+        default:
+            e.target.style.backgroundColor = currentColor;
+            e.target.style.opacity = 1;
+            break;
+    }
 }
 
 function rainbowSelector(randomColor) {
@@ -155,11 +170,21 @@ function clearSketch() {
     pixels.forEach((pixel) => {pixel.setAttribute('style', 'background-color: white')});
 }
 
+function updateColoringMethod(method) {
+    if (method == 'mouseenter')
+        currentColoringMethod = method;
+    else
+        currentColoringMethod = 'click';
+
+    paintConfiguration(currentMode);
+}
+
 // RUN PROGRAM --------------------------------------------------------------
 
 //Initialize variables
 let currentColor = DEFAULT_COLOR;
 let currentMode = DEFAULT_MODE;
+let currentColoringMethod = DEFAULT_COLORING_METHOD;
 let currentSize = DEFAULT_SIZE;
 
 // Execuate on onload
@@ -174,7 +199,7 @@ paintConfiguration(DEFAULT_MODE);
 const colorPicker = document.querySelector('.color_picker');
 let picker = new Picker({
     parent: colorPicker,
-    color: 'gold',
+    color: '#cb9be8ff',
     onChange: function(color) {
                   colorPicker.style.backgroundColor = color.rgbaString;
                   currentColor = color.rgbaString;
@@ -221,7 +246,7 @@ rainbowButton.addEventListener('click', function() {
 
 // eraser
 const eraserButton = document.querySelector('.eraser');
-eraserButton.classList.add('white');
+eraserButton.classList.add('erase_color');
 eraserButton.addEventListener('click', function() {
     currentMode = 'eraser';
     paintConfiguration(currentMode);
@@ -229,7 +254,21 @@ eraserButton.addEventListener('click', function() {
 
 // clear button
 const clearButton = document.querySelector('.clear');
-clearButton.classList.add('white');
+clearButton.classList.add('erase_color');
 clearButton.addEventListener('click', function() {
     clearSketch();
+});
+
+// hover_coloring button
+const colorOnHoverButton = document.querySelector('.color_on_hover');
+
+colorOnHoverButton.addEventListener('click', function() {
+    updateColoringMethod('mouseenter')
+});
+
+// click_coloring button
+const colorOnClickButton = document.querySelector('.color_on_click');
+
+colorOnClickButton.addEventListener('click', function() {
+    updateColoringMethod('click')
 });
