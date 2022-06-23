@@ -2,6 +2,10 @@
 
 <img width="1680" alt="Etch-a-sketch" src="https://user-images.githubusercontent.com/50895014/175352316-218412a3-84b4-48c4-af1a-7533988cf270.png">
 
+## Check out the page here!
+
+[Etch-A-Sketch]https://zdunc.github.io/etch-a-sketch/
+
 
 ### Introduction
 
