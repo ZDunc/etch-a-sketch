@@ -15,6 +15,7 @@ function init() {
 
 function createDivContainer() {
     const divContainer = document.createElement('div');
+    divContainer.classList.add('grid_container');
     divContainer.style.display = 'flex';
     divContainer.style.justifyContent = 'center';
 
@@ -52,6 +53,20 @@ function createGrid(size) {
     }
 
     return grid;
+}
+
+function changeSize(size) {
+    let container = document.querySelector('.grid_container');
+    if (container.parentNode) {
+        container.parentNode.removeChild(container);
+      }
+      grid.appendChild(createGrid(size));
+    paintConfiguration(currentMode);
+}
+
+function updateCurrentSize(size) {
+    sizeValue.innerHTML = `${size} x ${size}`
+    currentSize = size;
 }
 
 function paintConfiguration(mode) {
@@ -272,3 +287,10 @@ const colorOnClickButton = document.querySelector('.color_on_click');
 colorOnClickButton.addEventListener('click', function() {
     updateColoringMethod('click')
 });
+
+// Configure grid size slider --------------------------
+const sizeValue = document.getElementById('sizeValue');
+
+const slider = document.getElementById('grid_size_slider');
+slider.onmousemove = (e) => updateCurrentSize(e.target.value);
+slider.onchange = (e) => changeSize(e.target.value);
