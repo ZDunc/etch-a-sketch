@@ -1,3 +1,8 @@
+# Webpage preview
+
+<img width="1680" alt="Etch-a-sketch" src="https://user-images.githubusercontent.com/50895014/175352316-218412a3-84b4-48c4-af1a-7533988cf270.png">\
+
+
 ### Introduction
 
 In this project, you'll be creating a pretty neat toy for your portfolio to flex your DOM manipulation skills. You're going to build a browser version of something between a sketchpad and an Etch-A-Sketch.
