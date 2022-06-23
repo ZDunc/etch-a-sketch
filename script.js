@@ -10,7 +10,11 @@ const DEFAULT_SIZE = 32;
 // resets page background color
 function init() {
     const all = document.querySelector('*');
+    const body = document.querySelector('body');
+    const container = document.querySelector('.container');
     all.classList.remove('rainbow2');
+    body.classList.remove('rainbow2');
+    container.classList.remove('rainbow2');
 }
 
 function createDivContainer() {
@@ -253,8 +257,12 @@ randomButton.addEventListener('click', function() {
 const rainbowButton = document.querySelector('.rainbow');
 rainbowButton.addEventListener('click', function() {
     const all = document.querySelector('*');
+    const body = document.querySelector('body');
+    const container = document.querySelector('.container');
     all.classList.add('rainbow2');
-    
+    body.classList.add('rainbow2');
+    container.classList.add('rainbow2');
+
     currentMode = 'rainbow';
     paintConfiguration(currentMode);
 });

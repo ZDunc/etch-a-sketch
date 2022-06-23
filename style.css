@@ -1,3 +1,5 @@
+/* General Page Layout */
+
 * {
     box-sizing: border-box;
     background-color: #ede8e6;
@@ -23,19 +25,23 @@ body {
     display: flex;
     justify-content: center;
 
-     /* TEMPORARY BORDER*/
+     /* TEMPORARY BORDER
      border-width: 4px;
      border-color: lightgoldenrodyellow;
-     border-style: solid;
+     border-style: solid;*/
 }
 
 .settings {
     flex: 1 1 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    /* TEMPORARY BORDER*/
+    /* TEMPORARY BORDER
     border-width: 4px;
     border-color: lightcyan;
-    border-style: solid;
+    border-style: solid;*/
 }
 
 .grid {
@@ -56,6 +62,82 @@ body {
     border-color: black;
     background-color: white;
 }
+
+/* Buttons and sketch settings -- style configuration */
+
+.sketch_options {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.color_picker {
+    margin: 4px;
+}
+
+.grey_scale {
+    margin: 4px;
+}
+
+.random {
+    margin: 4px;
+}
+
+.rainbow {
+    margin: 4px;
+}
+
+.sketch_tools {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.eraser {
+    margin: 4px;
+}
+
+.clear {
+    margin: 4px;
+}
+
+.sketch_methods {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.color_on_hover {
+    margin: 4px;
+}
+
+.color_on_click {
+    margin: 4px;
+}
+
+.grid_settings {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.size_value {
+    margin: 4px;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 550;
+}
+
+#grid_size_slider {
+    margin: 4px;
+}
+
+/* Color stylings */
 
 .rainbow1 {
     background: linear-gradient(
@@ -170,7 +252,7 @@ input[type="range"]::-ms-fill-upper {
   border-radius: 6px;
   box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
   box-sizing: border-box;
-  color: #fff;
+  color: #1e0230ff;
   cursor: pointer;
   display: inline-flex;
   font-family: "JetBrains Mono",monospace;
