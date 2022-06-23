@@ -2,7 +2,7 @@
 
 * {
     box-sizing: border-box;
-    background-color: #ede8e6;
+    background-color: #a6f87fff;
     font-family:'Courier New', Courier, monospace;
 }
 
@@ -15,15 +15,25 @@ body {
 .title {
     font-size: 72px;
     font-weight: 600;
+    text-shadow: 1px 1px 2px #fbf3acff, 0 0 1em #fbf3acff, 0 0 0.3em black;
     display: flex;
     justify-content: center;
 }
 
+.title_border {
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(95, 21, 242, 1);
+}
+
 .container {
-    width: 800px;
+    width: 900px;
     padding: 32px 80px;
+    gap: 20px;
     display: flex;
     justify-content: center;
+    background-color: #fcf7ecff;
+    box-shadow: black 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
 
      /* TEMPORARY BORDER
      border-width: 4px;
@@ -37,6 +47,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #fcf7ecff;
 
     /* TEMPORARY BORDER
     border-width: 4px;
@@ -70,6 +81,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #fcf7ecff;
 }
 
 .color_picker {
@@ -93,6 +105,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #fcf7ecff;
 }
 
 .eraser {
@@ -108,6 +121,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #fcf7ecff;
 }
 
 .color_on_hover {
@@ -123,6 +137,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #fcf7ecff;
 }
 
 .size_value {
@@ -131,6 +146,7 @@ body {
     justify-content: center;
     font-size: 24px;
     font-weight: 550;
+    background-color: #fcf7ecff;
 }
 
 #grid_size_slider {
@@ -248,7 +264,9 @@ input[type="range"]::-ms-fill-upper {
 .button-29 {
   align-items: center;
   appearance: none;
-  border: 0;
+  border: 0.5px;
+  border-color: black;
+  border-style: solid;
   border-radius: 6px;
   box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
   box-sizing: border-box;

@@ -1,6 +1,6 @@
 // Global Variables
 
-const DEFAULT_COLOR = '#cb9be8ff';
+const DEFAULT_COLOR = '#a6f87fff';
 const DEFAULT_MODE = 'color';
 const DEFAULT_COLORING_METHOD = 'mouseenter'
 const DEFAULT_SIZE = 32;
@@ -11,10 +11,11 @@ const DEFAULT_SIZE = 32;
 function init() {
     const all = document.querySelector('*');
     const body = document.querySelector('body');
-    const container = document.querySelector('.container');
+    const title = document.querySelector('.title');
     all.classList.remove('rainbow2');
     body.classList.remove('rainbow2');
-    container.classList.remove('rainbow2');
+    title.classList.remove('rainbow2');
+    title.classList.remove('title_border');
 }
 
 function createDivContainer() {
@@ -22,6 +23,7 @@ function createDivContainer() {
     divContainer.classList.add('grid_container');
     divContainer.style.display = 'flex';
     divContainer.style.justifyContent = 'center';
+    divContainer.style.backgroundColor = '#fcf7ecff';
 
     return divContainer;
 }
@@ -40,7 +42,6 @@ function createGrid(size) {
             pixel.style.height = `${newHeightAndWidth}px`;
             pixel.style.width = `${newHeightAndWidth}px`;
             
-
             // edge cases, stronger outline on outside of grid
             if (j == 0)
                 pixel.style.borderTopWidth = '2px';
@@ -185,8 +186,7 @@ function updateCurrentColor(color) {
 }
 
 function clearSketch() {
-    const pixels = document.querySelectorAll(".pixel");
-    pixels.forEach((pixel) => {pixel.setAttribute('style', 'background-color: white')});
+    changeSize(currentSize);
 }
 
 function updateColoringMethod(method) {
@@ -218,7 +218,7 @@ paintConfiguration(DEFAULT_MODE);
 const colorPicker = document.querySelector('.color_picker');
 let picker = new Picker({
     parent: colorPicker,
-    color: '#cb9be8ff',
+    color: '#a6f87fff',
     onChange: function(color) {
                   colorPicker.style.backgroundColor = color.rgbaString;
                   currentColor = color.rgbaString;
@@ -258,10 +258,11 @@ const rainbowButton = document.querySelector('.rainbow');
 rainbowButton.addEventListener('click', function() {
     const all = document.querySelector('*');
     const body = document.querySelector('body');
-    const container = document.querySelector('.container');
+    const title = document.querySelector('.title');
     all.classList.add('rainbow2');
     body.classList.add('rainbow2');
-    container.classList.add('rainbow2');
+    title.classList.add('rainbow2');
+    title.classList.add('title_border');
 
     currentMode = 'rainbow';
     paintConfiguration(currentMode);
