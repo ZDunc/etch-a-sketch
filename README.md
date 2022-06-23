@@ -4,7 +4,7 @@
 
 ## Check out the page here!
 
-[Etch-A-Sketch]https://zdunc.github.io/etch-a-sketch/
+[Etch-A-Sketch](https://zdunc.github.io/etch-a-sketch/)
 
 
 ### Introduction
