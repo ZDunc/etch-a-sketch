@@ -3,7 +3,7 @@
 const DEFAULT_COLOR = '#cb9be8ff';
 const DEFAULT_MODE = 'color';
 const DEFAULT_COLORING_METHOD = 'mouseenter'
-const DEFAULT_SIZE = 30;
+const DEFAULT_SIZE = 32;
 
 // FUNCTIONS -----------------------------------------------------------------
 

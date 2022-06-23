@@ -107,6 +107,59 @@ body {
     background-color: #f4d893ff;
 }
 
+/* Grid Slider configuration */
+/* Inspiration from https://stackoverflow.com/questions/18389224/
+how-to-style-html5-range-input-to-have-different-color-before-and-after-slider */
+
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      border: solid;
+      border-width: 0.5px;
+      border-color: #b05ee2ff;
+      border-radius: 40px;
+      width: 180px;
+      -webkit-appearance: none;
+      background-color: white;
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      border-radius: 40px;
+      height: 10px;
+      -webkit-appearance: none;
+      color: #13bba4;
+      margin-top: -1px;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: 8px;
+      height: 14px;
+      border: solid;
+      border-width: 0.5px;
+      border-color: #b05ee2ff;
+      margin-top: -1px;
+      -webkit-appearance: none;
+      cursor: ew-resize;
+      background: #b05ee2ff;
+    }
+
+}
+/** FF*/
+input[type="range"]::-moz-range-progress {
+  background-color: #cb9be8ff; 
+}
+input[type="range"]::-moz-range-track {  
+  background-color: white;
+}
+
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+  background-color: #cb9be8ff; 
+}
+input[type="range"]::-ms-fill-upper {  
+  background-color: white;
+}
+
 
 /* Button configuration from https://getcssscan.com/css-buttons-examples */
 
